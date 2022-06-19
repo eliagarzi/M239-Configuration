@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="service-status">
+            <p>Service Status: Ok</p>    
+        </div>
+
+        <nav class="top-nav">
+            <ul>
+                <li class="top-nav__element"><a href="http://zuericloud.ch/status/">Status</a></li>
+                <li class="top-nav__element"><a href="#services">Services</a></li>
+                <li class="top-nav__element"><a href="#location">Standorte</a></li>
+                <li class="top-nav__element"><a>Support</a></li>
+                <button class="top-nav__element--button">Cloud Console</button>
+            </ul>
+        </nav>
+        
+        <video autoplay muted loop id="backgroundvideo">
+            <source src="./source/img/video.mp4" type="video/mp4">
+        </video>
+        
+        <section class="start-section">
+            <div class="start-section__title">
+                <h1>Deine Cloud. Züri Cloud</h1>
+                <button class="start-section__title--button">Starten</button>
+            </div>
+        </section>
+        <section class="services-section" id="services">
+            <div class="services-section__header">
+                <h1>Unsere Services</h1>
+                <p>Die Züricloud bietet Ihnen bietet viele moderne Services</p>
+            </div>
+            <div class="services-section__main">
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/app_engine.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>Virtuelle Maschinen</p>
+                        <p>Passende Virtuelle Maschinen für jeden Workload</p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>    
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/asset_inventory.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>Reverse Proxy</p>
+                        <p>Leistungsstarke Reverse Proxys und Load Balaner</p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>    
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/security.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>VPN Server</p>
+                        <p>Sichere und schnelle VPN-Server mit Wireguard<p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>    
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/container_optimized_os.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>Container<p></p>
+                        <p>Container auf Basis von Containerd und Docker</p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>    
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/data_catalog.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>Nextcloud</p>
+                        <p>Deine eigener Cloudspeicher</p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>    
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/managed_service_for_microsoft_active_directory.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>E-Mail Server</p>
+                        <p>E-Mail Server as a Service</p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/database_migration_service.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>Datenbanken</p>
+                        <p>Database as a Service</p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>    
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/my_cloud.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>Cloud Native</p>
+                        <p>Coole Cloud Native Sachen</p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>    
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/iot_core.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>IOT</p>
+                        <p>Irgendwas mit IOT</p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>    
+                <div class="services-section__main--element">
+                    <div class="service-element__header">
+                        <img src="./source/img/kuberun.png" height="50px">
+                    </div>
+                    <div class="service-element__body">
+                        <p>Kubernetes</p>
+                        <p>Kubernetes as a Service</p>
+                        <a>Mehr Erfahren</a>
+                    </div>
+                </div>        
+            </div>
+        </section>
+        <section class="locations-section" id="location"> 
+            <div class="services-section__header">
+                <h1>Unser Rechenzentrum</h1>
+                <p>Modern. Schnell. Zukunftsweisend.</p>
+            </div>
+            <div class="services-section__image">
+                <img src="./source/img/rz.jpg" width="100%">
+            </div>
+        </section>
+        <script src="" async defer></script>
+    </body>
+</html>
