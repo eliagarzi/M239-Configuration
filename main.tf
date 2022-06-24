@@ -1,3 +1,4 @@
+# Über den Provider weiss Terraform, wie es mit der API zu kommunizieren muss, da sich jede Plattform (VMware, Azure oder eben GCP) unterscheiden
 provider "google" {
   project = "carbide-ego-343511"  # GCP Projekt in welchem die Infrastruktur aufgebaut werden soll
 }
@@ -70,6 +71,8 @@ resource "google_storage_bucket" "instance-script-storage-bucket" {
   force_destroy = true
 }
 
+# Der Service Account wird benötigt, um den Compute Engine Instanzen Berechtigung auf den Storage Bucket zu geben
+# https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/google_service_account
 resource "google_service_account" "instance-storage" {
   depends_on = [
     google_project_service.iam-service # Der Service Account ist abhängig davon, dass die IAM API aktiviert ist
@@ -100,7 +103,7 @@ resource "google_compute_subnetwork" "production-zh1" {
   ]
 
   name          = "production-zh1"
-  ip_cidr_range = "10.172.0.0/24"
+  ip_cidr_range = "10.60.0.0/24"
   region        = "europe-west6"
   network       = google_compute_network.production.name
 }
@@ -111,7 +114,7 @@ resource "google_compute_subnetwork" "management-zh1" {
   ]
 
   name          = "management-zh1"
-  ip_cidr_range = "10.60.0.0/24"
+  ip_cidr_range = "10.172.0.0/24"
   region        = "europe-west6"
   network       = google_compute_network.management.name
 }
@@ -211,12 +214,12 @@ resource "google_compute_firewall" "allow-smtp-in-prod" {
   network = google_compute_network.production.name
 
   allow {
-    protocol = "tcp"
-    ports    = ["24", "465", "587"]
+    protocol = "tcp" # Die Regel gilt für TCP Verbindungen
+    ports    = ["24", "465", "587"] # Die Regel gilt für TCP Verbindungen auf den SMTP Ports
   }
 
-  source_ranges = [ "0.0.0.0/0" ]
-  target_tags = [ "smtp-server" ]
+  source_ranges = [ "0.0.0.0/0" ] # 0.0.0.0/0 steht für alle IP-Adressen
+  target_tags = [ "smtp-server" ] # Als Ziel gelten alle Instanzen mit dem Tag smtp-server
 }
 
 resource "google_compute_firewall" "allow-proxied-http-in-prod" {
@@ -263,8 +266,8 @@ resource "google_container_cluster" "primary" {
 
   name               = "gke-zh1"
   location           = "europe-west6"
-  network = google_compute_network.management.name
-  subnetwork = google_compute_subnetwork.management-zh1.name
+  network = google_compute_network.production.name
+  subnetwork = google_compute_subnetwork.production-zh1.name
   enable_autopilot = true
   ip_allocation_policy {
   }
