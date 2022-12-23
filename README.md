@@ -1,15 +1,14 @@
-# Terraform und Kubernetes auf GPC - Modul 239
+# Terraform und Kubernetes auf Google Cloud Platform - Modul 239
 
 Für das Modul 239 mussten wir verschiedene Internetservices aufbauen. Dazu nutze ich die Google Cloud Platform, um Erfahrungen mit einer Public Cloud zu sammeln. Anschliessend habe ich meine Modularbeit erweitert mit Terraform und Kubernetes.
 
-- [Terraform und Kubernetes auf GPC - Modul 239](#terraform-und-kubernetes-auf-gpc---modul-239)
+- [Terraform und Kubernetes auf Google Cloud Platform - Modul 239](#terraform-und-kubernetes-auf-google-cloud-platform---modul-239)
   - [Überblick](#überblick)
     - [Was ist Terraform?](#was-ist-terraform)
     - [Was ist Kubernetes?](#was-ist-kubernetes)
   - [Terraform](#terraform)
     - [Wie funktioniert Terraform?](#wie-funktioniert-terraform)
     - [Terraform Befehle](#terraform-befehle)
-    - [Terraform Workflow](#terraform-workflow)
     - [Terraform in einem Team](#terraform-in-einem-team)
   - [Terraform Infrastruktur](#terraform-infrastruktur)
     - [Netzwerke](#netzwerke)
@@ -147,8 +146,6 @@ Mit plan erstellt Terraform ein Plan davon, welche Änderungen Terraform plant d
 Mit apply wird die Konfiguration die im .tf File angegeben ist ausgeführt und erstellt. Dabei geht Terraform folgendermassen vor: 
 
 - Ressourcen die im aktuellen State gespeichert sind aber nicht in der neuen Konfiguration werden gelöscht.
-
-### Terraform Workflow
 
 ### Terraform in einem Team
 
@@ -377,4 +374,3 @@ APIs können über Terraform aktiviert und deaktiviert werden:
         }
 
 Wenn man aber ein neues GCP Projekt erstellt, muss man in diesem zuerst ein Abrechnugskonto hinzufügen, sonst gibt es einen Fehler beim aktivieren der API.
-
